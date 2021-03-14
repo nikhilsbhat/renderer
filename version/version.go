@@ -38,7 +38,7 @@ func GetBuildInfo() BuildInfo {
 		Env = "alfa"
 	}
 	return BuildInfo{
-		Version:     fmt.Sprintf("v%s", Version),
+		Version:     Version,
 		Revision:    Revision,
 		Environment: Env,
 		Platform:    Platform,

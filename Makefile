@@ -40,7 +40,7 @@ local.run: local.build ## Generates the artifact and start the service in the cu
 	./${APP_NAME}
 
 publish: local.check ## Builds and publishes the app
-	GOVERSION=$(go version) BUILD_ENVIRONMENT=${BUILD_ENVIRONMENT} goreleaser --snapshot --skip-publish --rm-dist
+	GOVERSION=${GOVERSION} BUILD_ENVIRONMENT=${BUILD_ENVIRONMENT} goreleaser --snapshot --skip-publish --rm-dist
 
 dockerise: local.check ## Containerise the appliction
 	docker build . --tag ${DOCKER_USER}/${PROJECT_NAME}:${VERSION}

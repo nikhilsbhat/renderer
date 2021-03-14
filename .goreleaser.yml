@@ -5,8 +5,6 @@ before:
     - go mod tidy
     # you may remove this if you don't need go generate
     - go generate ./...
-env:
-  - BUILD_ENVIRONMENT=production
 builds:
   - env:
       - CGO_ENABLED=0
@@ -25,7 +23,7 @@ archives:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "-next"
+  name_template: "{{ .Tag }}"
 changelog:
   sort: asc
   filters:
